@@ -44,7 +44,7 @@ public class Basics {
          *                Hello World!
          */
 
-
+        System.out.println("Hello World!");
 
         /* 4. In Python, we could declare variables using a simple assignment
          *    statement. For example:
@@ -63,7 +63,7 @@ public class Basics {
          *                value 100.
          */
 
-
+        int my_variable = 100;
 
         /* Do not remove the line below: if you did task 2 correctly, then
          * you should see the message "my_variable's value is 100" if you run
@@ -99,40 +99,42 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
+        for (int j = 10; j >= 0; j--) {
+            System.out.println("Current count: " + j);
+        }
 
-
+        /**
+         *  6. Below is a method named split which returns a String,
+         *    as indicated by the 'String' part of the header. It takes one
+         *    parameter named to_split, whose type is also a String.
+         *
+         *    This block of code above the method is called the doc comment -- this
+         *    is equivalent to docstrings in Python.
+         *
+         *    Below, we provide descriptions of what the parameters are and details
+         *    about what is returned.
+         *
+         * Create a String named 'ret' and get the first letter of
+         * each word inside to_string. to_string is a String containing exactly
+         * 7 words, separated by spaces.
+         *
+         * You may want to use String.split() and String.charAt() methods.
+         * See 1.5.2. APIs for their APIs.
+         *
+         * For example, calling the below method on the string:
+         *    "Idol Long Oolong Vertical Europe University Toyota"
+         * should return "ILOVEUT"
+         *
+         * (Relevant readings: 1.4. Strings and 1.4.4. StringBuilder.
+         *                     1.8.2. for Loops may be useful too.)
+         *
+         * @param to_split   A string containing EXACTLY 7 words, separated by
+         *                   spaces.
+         * @return The first letter of every word in to_split
+         */
     }
-
-    /**
-     *  6. Below is a method named split which returns a String,
-     *    as indicated by the 'String' part of the header. It takes one
-     *    parameter named to_split, whose type is also a String.
-     *
-     *    This block of code above the method is called the doc comment -- this
-     *    is equivalent to docstrings in Python.
-     *
-     *    Below, we provide descriptions of what the parameters are and details
-     *    about what is returned.
-     *
-     * Create a String named 'ret' and get the first letter of
-     * each word inside to_string. to_string is a String containing exactly
-     * 7 words, separated by spaces.
-     *
-     * You may want to use String.split() and String.charAt() methods.
-     * See 1.5.2. APIs for their APIs.
-     *
-     * For example, calling the below method on the string:
-     *    "Idol Long Oolong Vertical Europe University Toyota"
-     * should return "ILOVEUT"
-     *
-     * (Relevant readings: 1.4. Strings and 1.4.4. StringBuilder.
-     *                     1.8.2. for Loops may be useful too.)
-     *
-     * @param to_split   A string containing EXACTLY 7 words, separated by
-     *                   spaces.
-     * @return           The first letter of every word in to_split
-     */
-    public static String split(String to_split) {
+    public static String split(String to_split)
+        {
         /* TODO (Task 4): Complete this method body.
          *                The String methods .split and .charAt may be helpful,
          *                along with the StringBuilder.append
@@ -143,8 +145,14 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
+            String[] stringArr;
+            stringArr = to_split.split(" ");
 
-        return ret.toString();
+            for(int i=0; i<stringArr.length; i++)
+            {
+                ret.append(stringArr[i].charAt(0));
+            }
+            return ret.toString();
     }
 
     /**
@@ -163,13 +171,18 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
          *                .length attribute (e.g. arr.length)
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
+        int l = arr.length;
+        for(int i=0; i<l; i++)
+        {
+            if(i%2==0)
+                current_sum = current_sum + arr[i];
+        }
 
         return current_sum;
     }
