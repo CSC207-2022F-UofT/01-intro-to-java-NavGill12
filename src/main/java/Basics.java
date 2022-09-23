@@ -180,7 +180,7 @@ public class Basics {
         int l = arr.length;
         for(int i=0; i<l; i++)
         {
-            if(i%2==0)
+            if(i % 2 == 1)
                 current_sum = current_sum + arr[i];
         }
 
